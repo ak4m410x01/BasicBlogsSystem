@@ -3,10 +3,12 @@ from .models import Post
 
 # Create your views here.
 
-from django.http import HttpResponse
-
 
 def post_list(request):
     all_posts = Post.objects.all()
     return render(request, "post/post_list.html", {"all_posts": all_posts})
-    # return HttpResponse("HEl")
+
+
+def post_detail(request, id):
+    post = Post.objects.get(id=id)
+    return render(request, "post/post_detail.html", {"post": post})
