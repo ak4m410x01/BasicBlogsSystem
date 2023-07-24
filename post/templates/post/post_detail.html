@@ -1,6 +1,8 @@
 <h1>Welcome Post Detail</h1>
 
+<a href="{% url 'blog:post_edit' post.id %}">Edit Post</a>
+<hr />
+
 
 <h3>{{post.title}}</h3>
 <p>{{post.content}}</p>
-
