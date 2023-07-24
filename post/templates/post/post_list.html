@@ -1,5 +1,8 @@
 <h1>Welcome Post List</h1>
 
+<a href="{% url 'blog:post_create' %}">Create Post</a>
+<hr />
+
 {% for post in all_posts %}
 
 <h3><a href="{% url 'blog:post_detail' post.id %}">{{post}}</a></h3>
