@@ -13,4 +13,6 @@ urlpatterns = [
     # post [list,detail] cbv
     path("cbv", views.PostList.as_view(), name="post_list_cbv"),
     path("cbv/<int:pk>", views.PostDetail.as_view(), name="post_detail_cbv"),
+    # post [update] cbv
+    path("cbv/<int:pk>/edit", views.PostUpdate.as_view(), name="post_edit_cbv"),
 ]

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Post
 from .forms import PostForm
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 # Create your views here.
 
@@ -43,3 +44,10 @@ class PostList(ListView):
 
 class PostDetail(DetailView):
     model = Post
+
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = "__all__"
+    template_name = "post/post_edit.html"
+    success_url = "/blog/cbv"
