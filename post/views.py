@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from .forms import PostForm
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
@@ -38,4 +38,8 @@ def post_edit(request, id):
 
 
 class PostList(ListView):
+    model = Post
+
+
+class PostDetail(DetailView):
     model = Post
