@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from .forms import PostForm
+from django.views.generic import ListView
 
 # Create your views here.
 
@@ -34,3 +35,7 @@ def post_edit(request, id):
     else:
         form = PostForm(instance=post)
     return render(request, "post/post_edit.html", {"form": form})
+
+
+class PostList(ListView):
+    model = Post
