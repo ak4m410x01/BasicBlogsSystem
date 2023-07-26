@@ -51,3 +51,10 @@ class PostUpdate(UpdateView):
     fields = "__all__"
     template_name = "post/post_edit.html"
     success_url = "/blog/cbv"
+
+
+class PostCreate(CreateView):
+    model = Post
+    fields = "__all__"
+    template_name = "post/post_create.html"
+    success_url = "/blog/cbv"
