@@ -12,7 +12,7 @@ class Profile(models.Model):
     image = models.ImageField(upload_to="users/")
 
     def __str__(self) -> str:
-        return self.user
+        return str(self.user)
 
 
 @receiver(post_save, sender=User)
